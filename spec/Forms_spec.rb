@@ -18,4 +18,6 @@ describe 'Forms' do
         expect(find('#flash')).to have_content 'Olá, Tony Stark. Você acessou a área logada!'
 
     end
+
+    
 end
