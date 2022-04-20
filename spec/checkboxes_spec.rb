@@ -15,7 +15,7 @@ describe 'Caixas de seleção', :checkbox do
     end
 
     it 'marcando com find set true' do
-        find('input[value=cap]').set(true)
+        find('input[value=cap]').set(true)        
     end
 
     it 'desmarcando com find set false' do
