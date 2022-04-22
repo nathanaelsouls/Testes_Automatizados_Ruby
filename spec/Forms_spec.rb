@@ -2,7 +2,7 @@
 
 describe 'Forms'  do 
     
-    it 'login com sucesso', :login do
+      it 'login com sucesso', :login do
 
         visit 'https://training-wheels-protocol.herokuapp.com/login'
 
@@ -12,5 +12,5 @@ describe 'Forms'  do
             expect(find('#flash').visible?).to be true
             expect(find('#flash').text).to include 'Olá, Tony Stark. Você acessou a área logada!'
             expect(find('#flash')).to have_content 'Olá, Tony Stark. Você acessou a área logada!'
-    end    
+    end
 end
