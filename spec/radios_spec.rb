@@ -14,7 +14,7 @@ describe 'Botões de Radio', :radio do
     end
 
     after(:each) do
-        sleep 3 
+        sleep 1 
     end
 
 end

@@ -3,7 +3,7 @@
 describe 'Login 2', :login2  do
     
     before(:each) do
-        visit ''
+        visit '/login2'
     end
 
     it 'com data de nascimento' do        
@@ -19,7 +19,7 @@ describe 'Login 2', :login2  do
         when /Mês/
             find('#month').set '05'
         when /Ano/
-            find('#year').set '1976'
+            find('#year').set '1970'
         end        
         
         click_button 'Login'

@@ -1,7 +1,6 @@
 
 
-describe 'Meu primeiro script', :smoke do
-
+describe 'Meu primeiro script', :smoke, :hello do
     it 'visitar a página' do
         visit '/'
         expect(page.title).to eql 'Training Wheels Protocol'
