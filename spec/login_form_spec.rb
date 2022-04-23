@@ -1,6 +1,6 @@
 
 
-describe 'login_Forms', :login_form, :smoke  do
+describe 'login_form_spec', :login_form, :smoke  do
     
     it 'login com sucesso' do
         visit '/login'
@@ -10,7 +10,7 @@ describe 'login_Forms', :login_form, :smoke  do
         click_button 'Login'
         expect(find('#flash').visible?).to be true
         expect(find('#flash').text).to include 'Olá, Tony Stark. Você acessou a área logada!'
-        expect(find('#flash')).to have_content 'Olá, Tony Stark. Você acessou a área logada!'
+        expect(find('#flash')).to have_content 'Olá, Tony Stark. Você acessou a área logada!'        
     end
 
     it 'login com senha incorreta' do
@@ -21,7 +21,7 @@ describe 'login_Forms', :login_form, :smoke  do
         
         click_button 'Login'        
         
-        expect(find('#flash')).to have_content 'Senha é invalida!'
+        expect(find('#flash')).to have_content 'Senha é invalida!'        
     end
 
     it 'login com usuário não cadastrado' do
@@ -32,6 +32,12 @@ describe 'login_Forms', :login_form, :smoke  do
         
         click_button 'Login'        
         
-        expect(find('#flash')).to have_content 'O usuário informado não está cadastrado!'
+        expect(find('#flash')).to have_content 'O usuário informado não está cadastrado!'        
+    end
+
+    after(:each) do |e|
+        nome = e.description.gsub(/[^A-Za-z0-9 ]/, '').tr(' ', '_')
+        puts nome
+        page.save_screenshot('log/' + nome + '.png')     
     end
 end
