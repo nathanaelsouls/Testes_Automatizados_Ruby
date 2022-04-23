@@ -1,9 +1,9 @@
 
 
-describe 'login_Forms', :login_form  do
+describe 'login_Forms', :login_form, :smoke  do
     
     it 'login com sucesso' do
-        visit 'https://training-wheels-protocol.herokuapp.com/login'
+        visit '/login'
 
         fill_in 'userId', with: 'stark'
         fill_in 'password', with: 'jarvis!'
@@ -14,7 +14,7 @@ describe 'login_Forms', :login_form  do
     end
 
     it 'login com senha incorreta' do
-        visit 'https://training-wheels-protocol.herokuapp.com/login'
+        visit '/login'
 
         fill_in 'userId', with: 'stark'
         fill_in 'password', with: 'xpto568'
@@ -25,7 +25,7 @@ describe 'login_Forms', :login_form  do
     end
 
     it 'login com usuário não cadastrado' do
-        visit 'https://training-wheels-protocol.herokuapp.com/login'
+        visit '/login'
 
         fill_in 'userId', with: 'hulk'
         fill_in 'password', with: 'xpto568'
